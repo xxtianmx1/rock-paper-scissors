@@ -10,7 +10,8 @@ function getComputerChoice(){
 }
 
 function getPlayerSelection(){
-    return prompt("Pick one : rock, paper, scissors").toLowerCase()
+    /*
+    return prompt("Pick one : rock, paper, scissors").toLowerCase()*/
 }
 
 function playRound(playerSelection, computerSelection){
