@@ -2,6 +2,7 @@ console.log("Hola Mundo")
 
 playerScore = 0
 cpuScore = 0
+games = 0
 
 function getComputerChoice(){
     myArray = ["rock","paper", "scissors"]
@@ -40,7 +41,16 @@ function playRound(playerSelection, computerSelection){
         playerScore++
     }
 
-    return ( result + "!, playerSelection: " + playerSelection + ", computerSelection: " + computerSelection)
+    const resultado = document.querySelector("#result")
+    resultado.textContent = result 
+
+    const player_points = document.querySelector("#player-points")
+    player_points.textContent = playerScore
+
+    const cpu_points = document.querySelector("#cpu-points")
+    cpu_points.textContent = cpuScore
+
+
 }
 
 
@@ -50,16 +60,33 @@ function playGame(selection){
     i=0
     winner = "DRAW"
 
+    const game = document.querySelector("#game")
+    games++
+    game.textContent = "Game # "+ games 
     
-    console.log( "Game 1 " + playRound( getPlayerSelection(selection), getComputerChoice() ) )
+    const player = document.querySelector("#player")
+    player.textContent = "Player choose " + selection
+
+    const cpuChoice = getComputerChoice() 
+
+    const computer = document.querySelector("#computer")
+    computer.textContent = "Computer choose " + cpuChoice
+
+    playRound( getPlayerSelection(selection), cpuChoice)
     
 
-    if( playerScore>cpuScore ){
+    if( playerScore == 5 ){
         winner="PLAYER"
-    }else if( cpuScore>playerScore ){
+        const win = document.querySelector("#winner")
+        win.textContent = "CONGRATULATION!!!, you are the winner"
+    }else if( cpuScore == 5 ){
         winner="CPU"
+        const win = document.querySelector("#winner")
+        win.textContent = "The winner is : " + winner
     }
-    console.log( "The winner is "+ winner + "\n player: "+ playerScore + ", computer: " + cpuScore)
+
+    
+    
     
 }
 
