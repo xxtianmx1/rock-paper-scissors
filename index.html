@@ -6,18 +6,22 @@
     <title>Rock-Paper-Scissors</title>
 
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/scripts.js"></script>
+    <script src="./js/scripts.js" defer></script>
 </head>
 <body>
     <h1>Rock, paper, scissors</h1>
     <div class="container">
         <div class="left-panel">
             <h3>Choose one :</h3>
-            <img src="./images/paper.png" alt="">
-            <img src="./images/rock.png" alt="">
-            <img src="./images/scissors.png" alt="">
+            <img src="./images/paper.png" alt="" id="paper">
+            <img src="./images/rock.png" alt="" id="rock">
+            <img src="./images/scissors.png" alt="" id="scissors">
         </div>
-        <div class="right-panel"></div>
+        <div class="right-panel">
+            <div id="game">Game</div>
+            <div id="player">Player:</div>
+            <div id="computer">Computer:</div>
+        </div>
     </div>
 </body>
 </html>

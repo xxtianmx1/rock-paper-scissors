@@ -1,5 +1,6 @@
 body{
     background-color: rgb(200, 50, 50);
+    height: 100vh;
     
 }
 
@@ -26,6 +27,8 @@ img:hover{
     padding-bottom: 20px;
     border: 1px solid black;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
 

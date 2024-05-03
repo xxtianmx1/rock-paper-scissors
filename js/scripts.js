@@ -9,9 +9,8 @@ function getComputerChoice(){
     return myArray[ Math.floor( Math.random()*3 )  ]
 }
 
-function getPlayerSelection(){
-    /*
-    return prompt("Pick one : rock, paper, scissors").toLowerCase()*/
+function getPlayerSelection( selection ){
+    return selection
 }
 
 function playRound(playerSelection, computerSelection){
@@ -45,16 +44,15 @@ function playRound(playerSelection, computerSelection){
 }
 
 
-function playGame(){
+function playGame(selection){
 
     numGames = 5;
     i=0
     winner = "DRAW"
 
-    while( i<numGames ){
-        i++
-        console.log( "Game 1 " + playRound( getPlayerSelection(), getComputerChoice() ) )
-    }
+    
+    console.log( "Game 1 " + playRound( getPlayerSelection(selection), getComputerChoice() ) )
+    
 
     if( playerScore>cpuScore ){
         winner="PLAYER"
@@ -66,5 +64,13 @@ function playGame(){
 }
 
 
+const imgPaper = document.querySelector("#paper");
+const imgRock = document.querySelector("#rock");
+const imgScissors = document.querySelector("#scissors");
 
-playGame()
+imgPaper.addEventListener("click", () => playGame("paper") );
+imgRock.addEventListener("click", () => playGame("rock") );
+imgScissors.addEventListener("click", () => playGame("scissors") );
+
+
+
