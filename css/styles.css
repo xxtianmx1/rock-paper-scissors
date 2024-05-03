@@ -1,5 +1,6 @@
 body{
     background-color: rgb(200, 50, 50);
+    background: linear-gradient(135deg, red 35%, white);
     height: 100vh;
     
 }
@@ -25,11 +26,11 @@ img:hover{
     margin: auto;
     padding-left: 20px;
     padding-bottom: 20px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 10px;
     display: flex;
     align-items: center;
-    
+    background-color: white;
 }
 
 
